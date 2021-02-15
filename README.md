@@ -33,19 +33,28 @@ Database Used
 4.Create free cluster in any cloud such as aws,gcp or azure.
 
 4.After the cluster creation, configure the cluster using clicking the connect button.
+
 5.On the "Setup Connection Security" click the IP whitelist and add IP address : 0.0.0.0/0 to anywhere.
+
 6.Click the connection method button.
+
 7.Select Connect your Application.
+
 8.Select your driver as "Java" and Version as "4.1 or later".
+
 9.Copy your connection String and paste it in applications.properties such as 
     spring.data.mongodb.uri = connection String link
   and Specifying your dbusername,dbpassword and database.
+  
 10.create a database by clicking the collection button in project page.
+
 11 add the foolowing string to your application.properties:
      spring.data.mongodb.database=sampledb
      spring.output.ansi.enabled=ALWAYS
+     
 12. So the entire application.properties will look like following:
     spring.data.mongodb.uri=connection string
     spring.data.mongodb.database=your_database_name
     spring.output.ansi.enabled=ALWAYS
+    
 13.then run the SampleappApplication and the Backend is successfully connected to Mongodb.
