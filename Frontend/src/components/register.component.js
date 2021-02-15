@@ -22,7 +22,7 @@ export default class Register extends Component {
             selectedclass:"",
             selecteddiv:"",
             dob :new Date(),
-            class :[
+            classes :[
                 {
                     label: "Choose",
                     value: null,
@@ -136,7 +136,7 @@ export default class Register extends Component {
             const userList ={
                 name :this.state.name,
                 dob : this.state.dob,
-                class : this.state.selectedclass,
+                classes : this.state.selectedclass,
                 div : this.state.selecteddiv,
                 gender : this.state.gender
             }
@@ -182,7 +182,7 @@ export default class Register extends Component {
                             <select className ="form-control"
                              onChange = {this.onChangeClass}
                             >
-                                {this.state.class.map((option) => (
+                                {this.state.classes.map((option) => (
                                 <option value={option.value}>
                                     {option.label}</option>
                                 ))}
