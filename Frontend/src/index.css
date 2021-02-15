@@ -18,7 +18,7 @@ code {
 
 .bg-holder{
   height: calc(100vh - 60px) !important;
- background: url("http://localhost:3000/img/bg.jpg") no-repeat center center fixed;
+ background: url("http://localhost:3000/img/classroom2.jpg") no-repeat center center fixed;
   -webkit-background-size: cover;
 }
 

@@ -21,7 +21,7 @@ export default class Register extends Component {
             name : "",
             selectedclass:"",
             selecteddiv:"",
-            dob :new Date(),
+            dob :"",
             classes :[
                 {
                     label: "Choose",
@@ -112,8 +112,8 @@ export default class Register extends Component {
         this.setState({name : e.target.value});
     }
     onChangeDob(dob){
-        
-        this.setState({dob : dob});
+        let md= document.getElementById("meet-date").value;
+        this.setState({dob : md});
     }
     onChangeClass(e){
         this.setState({selectedclass : e.target.value});
@@ -128,14 +128,14 @@ export default class Register extends Component {
     onSubmit(e){
         e.preventDefault();
 
-        const regName = /^[a-zA-Z]+ [a-zA-Z]+$/;
+        const regName = /^[A-Z][a-z]{3,30}(\s[A-Z](\.|[a-z]{2,30})?)*$/;
         const name = this.state.name;
         if(!regName.test(name)){
             alert('Invalid name given.');
         }else{
             const userList ={
                 name :this.state.name,
-                dob : this.state.dob,
+                dob : this.state.dob.substring(0,10),
                 classes : this.state.selectedclass,
                 div : this.state.selecteddiv,
                 gender : this.state.gender
@@ -155,8 +155,10 @@ export default class Register extends Component {
     }
     render(){
         return(
-            <div className ="container">
-                <h1>this is register section.</h1>
+            <div class="container">
+            <div class="row">
+                <div class="col-sm" style = {{padding: "50px"}}>
+                <h3>Student Registration</h3>
                 <form onSubmit = {this.onSubmit}> 
                     <div className = "form-group">
                         <label>Name :</label>
@@ -170,11 +172,11 @@ export default class Register extends Component {
                     <div className = "form-group">
                         <label>Date of Birth :</label>
                         <div>
-                            <DatePicker 
-                                selected ={this.state.dob}
-                                onChange ={this.onChangeDob}
-                            />
-                        </div>
+                            <input type="date" id="meet-date"
+                                onChange = {this.onChangeDob}
+
+                                ></input>
+                             </div>
                     </div>
                     <div className = "form-group">
                         <label>Class :</label>
@@ -249,10 +251,12 @@ export default class Register extends Component {
                         />
                     </div>
                 </form>
-                <div className="container">
-                     <h1>Userlist </h1>
-                     <table border="1">
+                </div>
+                <div class="col-sm" style = {{padding: "50px"}}>
+                <h3>Student Details </h3>
+                     <table border="1" cellPadding="10">
                              <tr>
+                                <td>S.No</td>
                                 <th>Name</th>
                                 <th>Date of Birth</th>
                                 <th>Class</th>
@@ -260,9 +264,9 @@ export default class Register extends Component {
                                 <th>Gender</th>
                              </tr>
                              
-                     {this.state.users.map(user => <tr>
+                     {this.state.users.map((user,index) => <tr>
                          
-                             
+                                <td>{index+1}</td>
                                 <td>{user.name}</td>
                                 <td>{user.dob}</td>
                                 <td>{user.classes}</td>
@@ -270,10 +274,11 @@ export default class Register extends Component {
                                 <td>{user.gender}</td>
                             </tr>)}
                         
-                     </table>              
+                     </table>
                 </div>
-                  
             </div>
+            </div>
+            
         );
     }
 }

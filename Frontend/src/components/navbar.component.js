@@ -9,7 +9,7 @@ export default class Navbar extends Component{
     render(){
         return(
             <nav className = "navbar navbar-dark bg-dark navbar-expand-md">
-                <Link to ="/" className = "navbar-brand">SampleApp</Link>
+                <Link to ="/" className = "navbar-brand">Student Repo</Link>
                 <div className = "collapse navbar-collapse">
                 <ul className = "navbar-nav mr-auto">
                     <li className = "navbar-items">
