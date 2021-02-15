@@ -10,7 +10,7 @@ function App() {
     <Router>
       <div className = "container-fluid">
         <Navbar />
-        <br/>
+
         <Route path="/" exact component={Home} />
         <Route path="/register" exact component={Register} />
       </div>
