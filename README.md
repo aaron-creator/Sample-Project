@@ -25,9 +25,13 @@ How to run Backend?
 
 Database Used
 1.Atlas Mongodb.
+
 2.Create an Account in Atlas Mongodb.
+
 3.create an Organization and create a Project.
+
 4.Create free cluster in any cloud such as aws,gcp or azure.
+
 4.After the cluster creation, configure the cluster using clicking the connect button.
 5.On the "Setup Connection Security" click the IP whitelist and add IP address : 0.0.0.0/0 to anywhere.
 6.Click the connection method button.
