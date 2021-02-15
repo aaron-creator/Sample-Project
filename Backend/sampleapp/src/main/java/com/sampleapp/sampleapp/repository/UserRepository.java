@@ -13,4 +13,5 @@ public interface UserRepository extends MongoRepository<User, Integer> {
     List<User> findByClass(String classes);
     List<User> findByDiv(String div);
     List<User> findByGender(String gender);
+    List<User> findAllByOrderByName(String name);
 }
