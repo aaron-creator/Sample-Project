@@ -8,7 +8,7 @@ export default class Navbar extends Component{
     }
     render(){
         return(
-            <nav className = "navbar navbar-dark bg-dark navbar-expand-md">
+            <nav className = "navbar navbar-expand-sm bg-dark navbar-dark">
                 <Link to ="/" className = "navbar-brand">Student Repo</Link>
                 <div className = "collapse navbar-collapse">
                 <ul className = "navbar-nav mr-auto">
